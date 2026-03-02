@@ -91,7 +91,7 @@ body {
     background: var(--page-background);
     color: var(--text-primary);
     font-family: "Inter", system-ui, sans-serif;
-    font-size: .9375rem;
+    font-size: 1rem;
     line-height: 1.625;
 }
 
