@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block links %}
+<a href="{{ config.url }}/">More Articles</a>
+<a href="{{ config.url }}/about.html">About</a>
+{% endblock %}
+
+{% block title %}{{ post.title }} - {{ config.author }}の博客{% endblock %}
+
+{% block content %}
+<article>
+    <h1>{{ post.title }}</h1>
+    <div class="meta">
+        <p>Created on <time datetime="{{ post.created }}">{{ post.created }}</time>{% if post.updated %} • Updated on <time datetime="{{ post.updated }}">{{ post.updated }}</time>{% endif %}</p>
+    </div>
+    <hr>
+    {{ post.content | safe }}
+</article>
+{% endblock %}

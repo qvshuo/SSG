@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ config.author }}の博客</h1>
+<div class="meta">
+    <p>「此後如竟沒有炬火：我便是唯一的光。」</p>
+</div>
+<hr>
+<div class="post-list">
+    {% for post in posts %}
+    <article class="post-item">
+        <h2><a href="{{ config.url }}/posts/{{ post.url }}">{{ post.title }}</a></h2>
+        <time datetime="{{ post.created }}">{{ post.created }}</time>
+    </article>
+    {% endfor %}
+</div>
+{% endblock %}

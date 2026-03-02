@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ config.author }}の博客{% endblock %}</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="icon" href="/images/favicon.ico">
+</head>
+<body>
+    <header>
+        <div>
+            <a href="{{ config.url }}/">{{ config.author }}の博客</a>
+            <nav>
+                {% block links %}
+                <a href="{{ config.url }}/about.html">About</a>
+                {% endblock %}
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
