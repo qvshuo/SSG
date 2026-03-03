@@ -6,7 +6,7 @@
 
 ```bash
 # 安装依赖
-pip install jinja2 markdown
+pip install -r requirements.txt
 
 # 配置（编辑 ssg.py 顶部的 CONFIG）
 CONFIG = {"author": "你的名字", "url": "https://your-domain.com"}
@@ -79,12 +79,18 @@ jinja2>=3.0
 markdown>=3.0
 ```
 
+或使用：
+
+```bash
+pip install -r requirements.txt
+```
+
 ## 站点配置
 
 直接修改 `ssg.py` 顶部的 `CONFIG` 字典：
 
 ```python
-CONFIG = {"author": "安静", "url": "http://localhost:8000"}
+CONFIG = {"author": "你的名字", "url": "https://your-domain.com"}
 ```
 
 ## 模板继承
