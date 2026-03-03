@@ -189,6 +189,10 @@ header a {
     text-underline-offset: .175rem;
 }
 
+header nav {
+    font-size: .9rem;
+}
+
 header nav a {
     margin-left: .9375rem;
     text-transform: uppercase;
