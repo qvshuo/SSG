@@ -14,8 +14,8 @@ CONFIG = {"author": "你的名字", "url": "https://your-domain.com"}
 # 写文章（src/content/posts/*.md）
 ---
 title: 我的第一篇文章
-created: 2026/01/24
-updated: 2026/02/28
+created: 2026-01-24
+updated: 2026-02-28
 draft: false
 ---
 正文...
@@ -50,7 +50,7 @@ publish/             # 输出目录
 
 - 响应式布局，最大宽度 720px
 - 明暗主题自动切换（基于 `prefers-color-scheme`）
-- 文章标题 Base64 URL 安全编码生成 URL
+- 文章 URL 使用文件名（可读性强）
 - 毛玻璃效果 Header
 - 代码块样式
 
@@ -59,8 +59,8 @@ publish/             # 输出目录
 | 字段 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | title | string | 是 | 文章标题 |
-| created | string | 是 | 创建日期，格式 YYYY/MM/DD |
-| updated | string | 否 | 更新日期，格式 YYYY/MM/DD |
+| created | string | 是 | 创建日期，格式 YYYY-MM-DD |
+| updated | string | 否 | 更新日期，格式 YYYY-MM-DD |
 | draft | boolean | 否 | 设为 true 则不发布 |
 
 ---
@@ -118,17 +118,18 @@ base.html
 
 1. 读取 ssg.py 顶部的 CONFIG
 2. 清空 publish 目录（保留目录本身）
-3. 复制 CSS、图片、字体
+3. 复制 CSS、图片、字体（含子目录）
 4. 解析 posts/*.md（过滤草稿，按 created 倒序）
 5. 渲染 Jinja2 模板
-6. 输出 index.html、about.html、posts/*.html
+6. 生成 sitemap.xml
+7. 输出 index.html、about.html、posts/*.html
 
 ## 页面路由
 
 | 页面 | URL |
 |------|-----|
 | 首页 | /index.html |
-| 文章 | /posts/{base64编码}.html |
+| 文章 | /posts/{文件名}.html |
 | 关于 | /about.html |
 
 ## 样式 (styles.css)
@@ -191,5 +192,5 @@ base.html
 
 1. 草稿设置 `draft: true` 不会被构建
 2. 图片路径相对于 Markdown 文件所在目录
-3. 日期格式使用 `YYYY/MM/DD`
-4. 避免标题 Base64 编码后相同的文章
+3. 日期格式使用 `YYYY-MM-DD`
+4. 避免文件名相同的文章
