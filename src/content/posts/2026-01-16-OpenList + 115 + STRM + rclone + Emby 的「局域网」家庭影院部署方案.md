@@ -49,19 +49,19 @@ draft: false
 
     > STRM 文件本质是一个文本文件，指向视频资源的真实路径，Emby 可播放 STRM 指向的目标内容；通过将网盘资源映射为 STRM 文件，可以通过刮削 STRM 来代替直接刮削网盘文件，从而避免风控；
 
-    1.  OpenList 自带了 STRM 文件生成功能，故无需额外使用其他软件，直接：OpenList - 管理 - 存储 - 添加 - STRM：
+    OpenList 自带了 STRM 文件生成功能，故无需额外使用其他软件，直接：OpenList - 管理 - 存储 - 添加 - STRM：
     
-        - 挂载路径：`/115_strm`
-        - 路径：`/115` （即上述 115 网盘的挂载路径）
-        - 站点 URL：`/mnt` （文末补充如此配置的缘由）
-        - **编码路径：关**（本文方案中，开启会导致 Emby 只能播放纯英文路径的视频）
-        - 其他保持默认
+    - 挂载路径：`/115_strm`
+    - 路径：`/115` （即上述 115 网盘的挂载路径）
+    - 站点 URL：`/mnt` （文末补充如此配置的缘由）
+    - **编码路径：关**（本文方案中，开启会导致 Emby 只能播放纯英文路径的视频）
+    - 其他保持默认
 
-            ![openlist-115-strm-rclone-emby-300.png](https://pub-e4cebaa6c13f4b27a0ac28dc39ee18d0.r2.dev/openlist-115-strm-rclone-emby-300.png)
-            
-            ![openlist-115-strm-rclone-emby-400.png](https://pub-e4cebaa6c13f4b27a0ac28dc39ee18d0.r2.dev/openlist-115-strm-rclone-emby-400.png)
+        ![openlist-115-strm-rclone-emby-300.png](https://pub-e4cebaa6c13f4b27a0ac28dc39ee18d0.r2.dev/openlist-115-strm-rclone-emby-300.png)
+        
+        ![openlist-115-strm-rclone-emby-400.png](https://pub-e4cebaa6c13f4b27a0ac28dc39ee18d0.r2.dev/openlist-115-strm-rclone-emby-400.png)
 
-    2. 示例 STRM 文件内容：
+    - 示例 STRM 文件内容：
     
         `/mnt/115/TV Shows/玉茗茶骨 (2025) [tmdbid=284512]/Season 01/S01E02.mp4`
 
