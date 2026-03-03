@@ -10,7 +10,7 @@
     {% for post in posts %}
     <article class="post-item">
         <h2><a href="{{ config.url }}/posts/{{ post.url }}">{{ post.title }}</a></h2>
-        <time datetime="{{ post.created }}">{{ post.created }}</time>
+        <time datetime="{{ post.created }}">{{ post.created | replace('-', '/') }}</time>
     </article>
     {% endfor %}
 </div>

@@ -1,7 +1,7 @@
 ---
 title: OpenList + 115 + STRM + rclone + Emby 的「局域网」家庭影院部署方案
-created: 2026/01/16
-updated: 2026/02/13
+created: 2026-01-16
+updated: 2026-02-13
 draft: false
 ---
 

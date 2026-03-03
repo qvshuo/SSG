@@ -11,7 +11,7 @@
 <article>
     <h1>{{ post.title }}</h1>
     <div class="meta">
-        <p>Created on <time datetime="{{ post.created }}">{{ post.created }}</time>{% if post.updated %} • Updated on <time datetime="{{ post.updated }}">{{ post.updated }}</time>{% endif %}</p>
+        <p>Created on <time datetime="{{ post.created }}">{{ post.created | replace('-', '/') }}</time>{% if post.updated %} • Updated on <time datetime="{{ post.updated }}">{{ post.updated | replace('-', '/') }}</time>{% endif %}</p>
     </div>
     <hr>
     {{ post.content | safe }}

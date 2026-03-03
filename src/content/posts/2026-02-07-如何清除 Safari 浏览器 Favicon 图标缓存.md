@@ -1,6 +1,6 @@
 ---
 title: 如何清除 Safari 浏览器 Favicon 图标缓存
-created: 2026/02/07
+created: 2026-02-07
 draft: false
 ---
 

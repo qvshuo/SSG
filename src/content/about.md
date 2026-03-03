@@ -1,7 +1,7 @@
 ---
 title: 关于
-created: 2016/02/16
-updated: 2026/03/02
+created: 2016-02-16
+updated: 2026-03-02
 draft: false
 ---
 
