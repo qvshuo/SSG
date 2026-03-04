@@ -16,10 +16,12 @@ CONTENT_DIR = SRC_DIR / "content"
 POSTS_DIR = CONTENT_DIR / "posts"
 PUBLISH_DIR = BASE_DIR / "publish"
 
-# Jinja2 模板环境（全局单例，避免重复创建）
+# Jinja2 模板环境
 jinja_env = Environment(
     loader=FileSystemLoader(SRC_DIR / "layouts"),
     autoescape=select_autoescape(["html", "xml"]),
+    trim_blocks=True,
+    lstrip_blocks=True,
 )
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
