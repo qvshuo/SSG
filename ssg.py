@@ -59,6 +59,7 @@ def parse_markdown(filepath: Path) -> Dict[str, Any]:
 
     meta, body = parse_frontmatter(text)
     html = markdown.Markdown(extensions=["extra"]).convert(body)
+    html = re.sub(r"<img(?![^>]*loading=)", r'<img loading="lazy" ', html)
 
     return {
         "title": meta.get("title", "Untitled"),
