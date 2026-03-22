@@ -8,13 +8,7 @@ from pathlib import Path
 from typing import Dict, Any, Tuple, List
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-CONFIG: Dict[str, str] = {
-    "author": "安静",
-    "url": "https://anjing.art",
-    "og_title": "安静の博客",
-    "og_description": "「此後如竟沒有炬火：我便是唯一的光。」",
-    "og_image": "https://anjing.art/images/luca-bravo.jpg"
-}
+CONFIG: Dict[str, str] = {"author": "安静", "url": "https://anjing.art"}
 
 BASE_DIR = Path(__file__).parent
 SRC_DIR = BASE_DIR / "src"
@@ -65,7 +59,6 @@ def parse_markdown(filepath: Path) -> Dict[str, Any]:
 
     meta, body = parse_frontmatter(text)
     html = markdown.Markdown(extensions=["extra"]).convert(body)
-    html = re.sub(r"<img(?![^>]*loading=)", r'<img loading="lazy" ', html)
 
     return {
         "title": meta.get("title", "Untitled"),
