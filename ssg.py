@@ -4,6 +4,7 @@ import re
 import shutil
 import sys
 import markdown
+import minify_html
 from pathlib import Path
 from typing import Dict, Any, Tuple, List
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -80,6 +81,8 @@ def render_to_file(
     """渲染模板并写入文件"""
     try:
         html = jinja_env.get_template(template_name).render(context)
+        if output_path.suffix.lower() == ".html":
+            html = minify_html.minify(html)
         output_path.write_text(html, encoding="utf-8")
     except Exception as e:
         print(f"错误：渲染模板失败 - {template_name}: {e}", file=sys.stderr)
