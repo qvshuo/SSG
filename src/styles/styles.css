@@ -4,7 +4,7 @@
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url('/fonts/InterVariable.woff2') format('woff2');
+    src: url('/fonts/Inter/InterVariable.woff2') format('woff2');
 }
 
 @font-face {
@@ -12,7 +12,15 @@
     font-style: italic;
     font-weight: 100 900;
     font-display: swap;
-    src: url('/fonts/InterVariable-Italic.woff2') format('woff2');
+    src: url('/fonts/Inter/InterVariable-Italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Source Han Serif';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/fonts/Source Han Serif/SourceHanSerifSC-VF.woff2') format('woff2');
 }
 
 @font-face {
@@ -20,7 +28,7 @@
     font-style: normal;
     font-weight: 200 900;
     font-display: swap;
-    src: url('/fonts/SourceSerif4Variable-Roman.ttf.woff2') format('woff2');
+    src: url('/fonts/Source Serif 4/SourceSerif4-VariableFont_opsz,wght.woff2') format('woff2');
 }
 
 @font-face {
@@ -28,15 +36,23 @@
     font-style: italic;
     font-weight: 200 900;
     font-display: swap;
-    src: url('/fonts/SourceSerif4Variable-Italic.ttf.woff2') format('woff2');
+    src: url('/fonts/Source Serif 4/SourceSerif4-Italic-VariableFont_opsz,wght.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: 'Fira Code';
+    font-family: 'Google Sans Code';
     font-style: normal;
-    font-weight: 300 700;
+    font-weight: 100 900;
     font-display: swap;
-    src: url('/fonts/FiraCode-VF.woff2') format('woff2');
+    src: url('/fonts/Google Sans Code/GoogleSansCode[wght].woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Google Sans Code';
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/fonts/Google Sans Code/GoogleSansCode-Italic[wght].woff2') format('woff2');
 }
 
 /* 2. 变量与主题 */
@@ -56,8 +72,8 @@
     --link-color: #0f5491;
 
     /* 字体 */
-    --font-serif: "Source Serif 4", serif;
-    --font-mono: 'Fira Code', ui-monospace, monospace;
+    --font-serif: "Source Han Serif", "Source Serif 4", serif;
+    --font-mono: 'Google Sans Code', ui-monospace, monospace;
 }
 
 /* 深色模式 */
