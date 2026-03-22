@@ -35,10 +35,11 @@ src/
 ├── layouts/        # Jinja2 模板
 │   ├── base.html     # 基础模板
 │   ├── index.html    # 首页模板
-│   └── article.html  # 文章模板
+│   ├── article.html  # 文章模板
+│   └── sitemap.xml   # Sitemap 模板
 ├── styles/
 │   └── styles.css    # 样式
-├── fonts/           # 字体文件（Inter、Source Serif 4、Fira Code）
+├── fonts/           # 字体文件（Inter、Source Serif 4、Source Han Serif、Google Sans Code）
 ├── content/
 │   ├── posts/        # 文章 Markdown 文件
 │   └── about.md      # 关于页
@@ -53,6 +54,8 @@ publish/             # 输出目录
 - 文章 URL 使用文件名（可读性强）
 - 毛玻璃效果 Header
 - 代码块样式
+- HTML 压缩输出
+- Sitemap 自动生成
 
 ## Frontmatter 字段
 
@@ -75,8 +78,9 @@ publish/             # 输出目录
 ## 核心依赖
 
 ```
-jinja2>=3.0
-markdown>=3.0
+jinja2
+markdown
+minify_html
 ```
 
 或使用：
@@ -112,7 +116,7 @@ base.html
 - `position: sticky` 固定顶部
 - `backdrop-filter: blur(10px)` 毛玻璃效果
 - 左侧：站点标题（链接到首页）
-- 右侧：首页 About，文章页 More Articles + About
+- 右侧：首页 About，文章页 Articles + About
 
 ## 构建流程
 
@@ -121,8 +125,9 @@ base.html
 3. 复制 CSS、图片、字体（含子目录）
 4. 解析 posts/*.md（过滤草稿，按 created 倒序）
 5. 渲染 Jinja2 模板
-6. 生成 sitemap.xml
-7. 输出 index.html、about.html、posts/*.html
+6. 压缩 HTML 输出（使用 minify_html）
+7. 生成 sitemap.xml
+8. 输出 index.html、about.html、posts/*.html
 
 ## 页面路由
 
@@ -146,6 +151,7 @@ base.html
 
 | 变量 | 说明 | 浅色默认值 | 深色默认值 |
 |------|------|-----------|-----------|
+| --page-background | 页面背景颜色 | #ffffff | #212121 |
 | --text-primary | 主文字颜色 | #212326 | #f5f5f5 |
 | --text-secondary | 次要文字颜色 | #4d4f51 | #c4c4c4 |
 | --text-muted | 弱化文字颜色 | #909193 | #7b7b7b |
@@ -157,23 +163,24 @@ base.html
 | --code-background | 代码背景颜色 | #fbfbfb | #2a2a2a |
 | --code-border | 代码边框颜色 | #e9e9e9 | #424242 |
 | --link-color | 链接颜色 | #0f5491 | #91defa |
-| --font-serif | 衬线字体 | "Source Serif 4", serif | 同左 |
-| --font-mono | 等宽字体 | 'Fira Code', monospace | 同左 |
+| --font-serif | 衬线字体 | "Source Han Serif", "Source Serif 4", serif | 同左 |
+| --font-mono | 等宽字体 | 'Google Sans Code', ui-monospace, monospace | 同左 |
 
 ### 标题样式
 
 | 元素 | 字号 | 字重 | 上下间距 |
 |------|------|------|---------|
 | h1 | 2rem | 700 | 3rem / .75rem |
-| h2 | 1.625rem | 700 | 2.5rem / .75rem |
-| h3 | 1.375rem | 600 | 2rem / .625rem |
-| h4-h6 | 1.1875rem | 500 | 1.75rem / .5rem |
+| h2 | 1.375rem | 700 | 2.25rem / .625rem |
+| h3 | 1.2rem | 600 | 1.85rem / .5rem |
+| h4-h6 | 1.05rem | 500 | 1.5rem / .5rem |
 
 ### 字体定义
 
 - **Inter** (可变字体 100-900)：无衬线正文字体
-- **Source Serif 4** (可变字体 200-900)：衬线字体，用于 meta 时间等
-- **Fira Code** (可变字体 300-700)：等宽字体，用于代码
+- **Source Serif 4** (可变字体 200-900)：衬线字体
+- **Source Han Serif** (可变字体 100-900)：思源宋体，中文衬线字体
+- **Google Sans Code** (可变字体 100-900)：等宽字体，用于代码
 
 ### 排版细节
 
