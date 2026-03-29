@@ -1,7 +1,7 @@
 ---
 title: OpenList + 115 + STRM + rclone + Emby 的「局域网」家庭影院部署方案
 created: 2026-01-16
-updated: 2026-02-13
+updated: 2026-03-29
 draft: false
 ---
 
@@ -11,7 +11,7 @@ draft: false
 > 2. 倾向选择积极维护且被广泛使用的软件；
 > 3. 以尽量少的软件达成目标，降低配置复杂度与维护成本。
 
-> 环境：Fedora Server Linux
+> 环境：RHEL 10
 
 > 本文方案同样适用其他 Linux 发行版，macOS/Windows 下的实现原理亦基本一致。
 
@@ -69,8 +69,8 @@ draft: false
 
 > rclone 负责将 115 网盘资源和 STRM 文件以 WebDAV 的形式挂载到本地。
 
-1. **安装与环境准备**：以 Fedora Linux 为例，其他系统请善用搜索引擎检索互联网上的教程。
-    - 执行 `sudo dnf install rclone fuse -y` 安装 rclone 和 fuse；
+1. **安装与环境准备**：以 RHEL 10 Linux 为例，其他系统请善用搜索引擎检索互联网上的教程。
+    - 执行 `sudo dnf install rclone -y` 安装 rclone；
     - 执行 `sudo vim /etc/fuse.conf` 编辑配置文件，取消 `user_allow_other` 的注释。
 2. **配置：**将 OpenList 暴露的 WebDav（e.g. `http://192.168.1.100:5244/dav`）新建为一个 Remote，本文方案中命名为 openlsit，过程不再赘述，依旧请善用搜索引擎；
 3. **挂载：**将 115 网盘和视频资源对应的 STRM 文件挂载到本地。
