@@ -20,12 +20,14 @@ draft: false
 
 **方式一：使用 xcaddy 自行编译**
 
-参考 [官方文档](https://github.com/klzgrad/naiveproxy#server-setup) 执行：
+执行：
 
 ```bash
 go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
 ~/go/bin/xcaddy build --with github.com/caddyserver/forwardproxy=github.com/klzgrad/forwardproxy@naive
 ```
+
+后续步骤请自行参考 [官方文档](https://github.com/klzgrad/naiveproxy#server-setup)。
 
 **方式二：复用官方包并替换二进制文件**
 
