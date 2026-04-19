@@ -56,7 +56,7 @@ sudo chmod 755 /usr/local/bin/naive
 sudo systemctl edit caddy
 ```
 
-在编辑器中输入以下内容：
+输入以下内容：
 
 ```
 [Service]
@@ -93,7 +93,7 @@ ExecReload=/usr/local/bin/naive reload --config /etc/caddy/Caddyfile --force
 - `me@example.com`：用于申请 ACME 证书的邮箱
 - `basic_auth user pass`：认证凭据，需与客户端保持一致
 
-> 提示：只需在 `/var/www/html` 目录下放置一个 `index.html` 文件，即可使该域名指向一个普通的网站页面，以实现良好伪装。
+> 提示：只需在 `/var/www/html` 目录下放置一个 `index.html` 文件，即可使该域名指向一个普通的网站页面以实现良好伪装。
 
 ### C. 重载并启动服务
 
@@ -130,15 +130,14 @@ sudo systemctl restart caddy
 1. 打开 Quantumult X 配置文件，在 `[server_local]` 添加：
 
          socks5 = 192.168.1.100:1080, fast-open=false, udp-relay=false, tag=naiveproxy
-
-> 提示：此处的 `192.168.1.100` 应替换为实际运行 naive 客户端的 IP地址。
+         ;此处的 `192.168.1.100` 应替换为实际运行 naive 客户端的 IP地址。
 
 2. 在 `[filter_local]` 添加直连规则，防止代理流量回环：
 
          host-suffix, example.com, direct
 
-3. 保存配置文件，Quantumult X 将自动重载。选中新增的 `naiveproxy` 节点后，访问受限网站的流量路径如下：
+3. 保存配置文件，Quantumult X 将自动重载。选中新增的 `naiveproxy` 节点后，访问受限网站的流量路径如下：`Quantumult X → 本机 naive (SOCKS5) → VPS (naiveproxy) → 目标站点`。
 
-   `Quantumult X → 本机 naive (SOCKS5) → VPS (naiveproxy) → 目标站点`
-   
+## 六、结语
+
    至此，即可通过本地转发实现 Quantumult X 对 NaïveProxy 协议的支持。
