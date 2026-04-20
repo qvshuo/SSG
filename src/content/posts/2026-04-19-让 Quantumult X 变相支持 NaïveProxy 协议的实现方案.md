@@ -123,9 +123,9 @@ sudo systemctl restart caddy
         # 或直接通过命令行参数启动
         ./naive --listen socks://0.0.0.0:1080 --proxy https://user:pass@example.com
 
-启动后，客户端将在本机 `0.0.0.0:1080` 监听 SOCKS5 代理，并通过 NaïveProxy 协议将流量转发至 VPS。
+    启动后，客户端将在本机 `0.0.0.0:1080` 监听 SOCKS5 代理，并通过 NaïveProxy 协议将流量转发至 VPS。
 
-> 提示：建议运行客户端的设备配置静态 IP，以防局域网内其他设备因 IP 变动无法连接代理。
+    > 提示：建议运行客户端的设备配置静态 IP，以防局域网内其他设备因 IP 变动无法连接代理。
 
 ## 五、接入 Quantumult X
 
@@ -142,4 +142,4 @@ sudo systemctl restart caddy
 
 ## 六、结语
 
-   至此，即可通过本地转发实现 Quantumult X 对 NaïveProxy 协议的支持。
+至此，即可通过本地转发实现 Quantumult X 对 NaïveProxy 协议的支持。
