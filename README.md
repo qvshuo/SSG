@@ -1,7 +1,5 @@
 # 静态博客生成器
 
-这是一个用 Python 编写的极简静态博客生成器，可将 Markdown 文章渲染为纯静态 HTML，并输出到 `publish/` 目录。
-
 ## 快速开始
 
 ```bash
@@ -15,7 +13,7 @@ python3 ssg.py
 python3 ssg.py serve
 ```
 
-支持手动指定端口，例如 `python3 ssg.py serve 9000`。
+本地预览支持手动指定端口，例如 `python3 ssg.py serve 9000`。
 
 ## 内容结构
 
