@@ -1,3 +1,5 @@
 .DS_Store
+AGENTS.md
 publish/
 .ssg/
+__pycache__/
