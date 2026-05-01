@@ -54,9 +54,9 @@ draft: false
     - 携带签名：`打开`
     - 其他保持默认
 
-    ![openlist-strm-rclone-emby-302-200.png](https://pub-e4cebaa6c13f4b27a0ac28dc39ee18d0.r2.dev/openlist-strm-rclone-emby-302-200.png)
+    > 全局关闭签名时，可将「携带签名」选项设置为 `关闭`，路径：管理 → 设置 → 全局 → 关闭「签名所有」。
 
-    > 全局关闭签名时，可将「携带签名」选项设置为 `关闭`，路径：管理 → 设置 → 全局 → 关闭「签名所有」；
+    ![openlist-strm-rclone-emby-302-200.png](https://pub-e4cebaa6c13f4b27a0ac28dc39ee18d0.r2.dev/openlist-strm-rclone-emby-302-200.png)
 
     > 示例 STRM 文件内容：`http://192.168.1.10:5244/d/115/TV%20SHOWS/%E7%8E%89.../Season%2001/S01E36.mp4?sign=xx7-biG1o...=:0`。
 
