@@ -113,7 +113,7 @@ draft: false
 
 ## 四、302 重定向网关（Deno）
 
-> Emby302Gateway：200+ 行代码，通过 Deno 运行，实现向客户端返回 302 重定向后的 CDN 直链地址。
+> Emby302Gateway：200+ 行代码，通过 Deno 运行，实现向 Emby 客户端返回 302 重定向后的 CDN 直链地址。
 
 1. **安装：**
 
