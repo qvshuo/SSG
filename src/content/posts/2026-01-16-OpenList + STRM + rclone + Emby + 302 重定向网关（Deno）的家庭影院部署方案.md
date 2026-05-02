@@ -1,7 +1,7 @@
 ---
 title: OpenList + STRM + rclone + Emby + 302 重定向网关（Deno）的家庭影院部署方案
 created: 2026-01-16
-updated: 2026-05-01
+updated: 2026-05-02
 draft: false
 ---
 
@@ -113,11 +113,11 @@ draft: false
 
 ## 四、302 重定向网关（Deno）
 
-> Emby302Gateway：200+ 行代码，通过 Deno 运行，实现向 Emby 客户端返回 302 重定向后的 CDN 直链地址。
+> Emby302Gateway：通过 Deno 运行，将 Emby STRM 播放请求重定向到 OpenList 返回的 CDN 直链地址。
 
 1. **安装：**
 
-    克隆 `Emby302Gateway` 到本地：
+    克隆 [Emby302Gateway](https://github.com/qvshuo/Emby302Gateway) 到本地：
 
         git clone https://github.com/qvshuo/Emby302Gateway.git --depth=1 && cd Emby302Gateway
 
@@ -149,5 +149,5 @@ draft: false
 ## Emby 客户端
 
   将 Emby 客户端的服务器地址配置为 Deno 网关地址：`http://你的服务器IP:18096`；
-
-  播放任意视频时，实际请求将通过 302 重定向解析为网盘资源的 CDN 直链，从而不再受 Emby 所在设备的网络带宽限制。
+  
+  播放 STRM 视频时，实际请求将通过 302 重定向解析为 OpenList 返回的 CDN 直链，从而不再受 Emby 所在设备的网络带宽限制；本地视频及其他无法解析为 OpenList 直链的资源，仍由 Emby 按原方式处理。
