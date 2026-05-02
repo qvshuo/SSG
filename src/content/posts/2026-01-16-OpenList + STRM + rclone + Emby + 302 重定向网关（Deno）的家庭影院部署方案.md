@@ -148,6 +148,6 @@ draft: false
 
 ## Emby 客户端
 
-  将 Emby 客户端的服务器地址配置为 Deno 网关地址：`http://你的服务器IP:18096`；
+将 Emby 客户端的服务器地址配置为 Deno 网关地址：`http://你的服务器IP:18096`；
   
-  播放 STRM 视频时，实际请求将通过 302 重定向解析为 OpenList 返回的 CDN 直链，从而不再受 Emby 所在设备的网络带宽限制；本地视频及其他无法解析为 OpenList 直链的资源，仍由 Emby 按原方式处理。
+播放 STRM 视频时，实际请求将通过 302 重定向解析为 OpenList 返回的 CDN 直链，从而不再受 Emby 所在设备的网络带宽限制；本地视频及其他无法解析为 OpenList 直链的资源，仍由 Emby 按原方式处理。
